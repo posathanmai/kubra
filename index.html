@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KUBRA | Royal 1 Gram Gold & Ladies Corner</title>
+    <title>KUBRA | Royal Boutique & Ladies Corner</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,11 +39,6 @@
         .reveal { opacity: 0; transform: translateY(40px); transition: var(--transition); }
         .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* --- Custom Scrollbar --- */
-        ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: var(--obsidian); }
-        ::-webkit-scrollbar-thumb { background: var(--royal-gold); border-radius: 5px; }
-
         /* --- Navbar --- */
         nav {
             position: sticky; top: 0; 
@@ -69,34 +64,27 @@
         }
         .nav-links a:hover { color: #fff; text-shadow: 0 0 10px var(--royal-gold); }
 
-        /* --- Hero Section --- */
+        /* --- Hero --- */
         .hero {
-            height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
             text-align: center; color: var(--white); position: relative;
             background: var(--dark-gradient); padding: 0 10%;
             border-bottom: 5px double var(--royal-gold);
         }
-        
         .hero h1 { 
-            font-size: clamp(3rem, 10vw, 6rem); color: var(--royal-gold); 
-            margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 8px;
+            font-size: clamp(3.5rem, 12vw, 7rem); color: var(--royal-gold); 
+            margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 10px;
             background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
         .hero p { 
             font-size: 1.2rem; color: var(--cream); margin-bottom: 3rem; 
-            letter-spacing: 3px; text-transform: uppercase; font-weight: 300;
-        }
-        .cta-btn { 
-            padding: 1.2rem 3rem; background: var(--gold-gradient); 
-            color: var(--deep-burgundy); text-decoration: none; font-weight: 900; 
-            text-transform: uppercase; letter-spacing: 2px; transition: var(--transition);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+            letter-spacing: 4px; text-transform: uppercase; font-weight: 300;
         }
 
         /* --- Marquee --- */
         .marquee { 
             background: var(--royal-gold); color: var(--deep-burgundy); 
-            padding: 12px 0; overflow: hidden; white-space: nowrap; 
+            padding: 15px 0; overflow: hidden; white-space: nowrap; 
             font-weight: 700; border-bottom: 2px solid var(--obsidian);
         }
         .marquee-content { display: inline-block; animation: scroll 40s linear infinite; }
@@ -107,47 +95,50 @@
         section { padding: 100px 8%; position: relative; }
         .section-title { text-align: center; margin-bottom: 60px; }
         .section-title h2 { font-size: 3rem; color: var(--deep-burgundy); text-transform: uppercase; letter-spacing: 5px; }
-
-        .collections-grid { 
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; 
-        }
         
-        .card { background: #fff; padding: 10px; border: 1px solid #ddd; transition: var(--transition); }
-        .card:hover { transform: translateY(-15px); border-color: var(--royal-gold); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .card-img-box { width: 100%; height: 350px; background: #000; overflow: hidden; border-bottom: 3px solid var(--royal-gold); }
+        .collections-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; 
+        }
+        .card { background: #fff; padding: 10px; border: 1px solid #ddd; transition: var(--transition); text-align: center; }
+        .card:hover { transform: translateY(-10px); border-color: var(--royal-gold); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .card-img-box { width: 100%; height: 350px; background: #000; overflow: hidden; border-bottom: 2px solid var(--royal-gold); }
         .card-img-box img { width: 100%; height: 100%; object-fit: cover; }
-        .card-content { padding: 30px 15px; text-align: center; }
+        .card h3 { padding: 20px 0; color: var(--deep-burgundy); font-size: 1.4rem; }
 
-        /* --- Contact Section & Map --- */
+        /* --- Contact & Map --- */
         .contact-container { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; }
         
         .contact-card { 
             background: var(--obsidian); color: var(--cream); padding: 50px; 
-            border-left: 5px solid var(--royal-gold);
-            text-decoration: none; display: block; transition: var(--transition);
+            border-left: 5px solid var(--royal-gold); transition: var(--transition);
         }
-        .contact-card:hover { background: #222; }
-
         .contact-card h4 { color: var(--royal-gold); letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 10px; }
-        .contact-card p { font-size: 1.1rem; color: #fff; margin-bottom: 25px; }
+        .contact-card p { font-size: 1.1rem; color: #fff; margin-bottom: 30px; line-height: 1.8; }
 
-        .wa-btn-inline { 
-            display: inline-flex; align-items: center; gap: 10px;
-            background: #25D366; color: white !important; padding: 12px 25px;
-            text-decoration: none; font-weight: bold; margin-top: 20px;
-            border-radius: 4px;
+        /* Map link styling */
+        .btn-gold { 
+            display: inline-block; background: var(--gold-gradient); color: var(--deep-burgundy) !important;
+            padding: 15px 30px; font-weight: bold; text-decoration: none; 
+            text-transform: uppercase; letter-spacing: 1px; transition: 0.3s;
+            margin-right: 10px; margin-bottom: 10px;
         }
+        .btn-gold:hover { transform: scale(1.05); filter: brightness(1.1); }
 
         .map-wrapper { 
-            height: 450px; border: 5px solid var(--royal-gold); 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
-            overflow: hidden;
+            height: 500px; border: 8px solid #fff; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2); 
+            overflow: hidden; position: relative;
         }
 
         /* --- Footer --- */
-        footer { background: var(--obsidian); color: var(--royal-gold); text-align: center; padding: 60px 5%; border-top: 5px solid var(--royal-gold); }
+        footer { 
+            background: var(--obsidian); color: var(--royal-gold); 
+            text-align: center; padding: 60px 8%; border-top: 5px solid var(--royal-gold); 
+        }
+        .footer-address { margin: 20px 0; color: #fff; font-size: 0.9rem; letter-spacing: 1px; line-height: 1.6; }
+        .footer-map-link { color: var(--royal-gold); text-decoration: none; font-weight: bold; border-bottom: 1px solid var(--royal-gold); }
 
-        /* --- WhatsApp Floating Button --- */
+        /* --- WhatsApp Floating --- */
         .wa-float {
             position: fixed; bottom: 30px; right: 30px;
             width: 65px; height: 65px; background-color: #25D366;
@@ -174,14 +165,14 @@
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#collections">Collections</a></li>
-            <li><a href="#contact">Contact & Map</a></li>
+            <li><a href="#contact">Contact & Location</a></li>
         </ul>
     </nav>
 
     <section class="hero" id="home">
         <h1 class="reveal">KUBRA</h1>
-        <p class="reveal">Royal Elegance & Boutique</p>
-        <a href="#collections" class="cta-btn reveal">Enter Boutique</a>
+        <p class="reveal">Royal 1 Gram Gold & Ladies Corner</p>
+        <a href="#collections" class="btn-gold reveal" style="padding: 1.2rem 3.5rem;">Explore Boutique</a>
     </section>
 
     <div class="marquee">
@@ -191,38 +182,42 @@
     </div>
 
     <section id="collections">
-        <div class="section-title reveal"><h2>The Gallery</h2></div>
+        <div class="section-title reveal"><h2>The Boutique Gallery</h2></div>
         <div class="collections-grid">
-            <!-- Add your images as image1.jpg, image2.jpg etc in the same folder -->
-            <div class="card reveal"><div class="card-img-box"><img src="image1.jpg" alt="Jewellery"></div><div class="card-content"><h3>1 Gram Gold</h3></div></div>
-            <div class="card reveal"><div class="card-img-box"><img src="image2.jpg" alt="Cosmetics"></div><div class="card-content"><h3>Cosmetics</h3></div></div>
-            <div class="card reveal"><div class="card-img-box"><img src="image3.jpg" alt="Clothing"></div><div class="card-content"><h3>Clothing</h3></div></div>
-            <div class="card reveal"><div class="card-img-box"><img src="image4.jpg" alt="Materials"></div><div class="card-content"><h3>Dress Materials</h3></div></div>
-            <div class="card reveal"><div class="card-img-box"><img src="image5.jpg" alt="Earrings"></div><div class="card-content"><h3>Earrings</h3></div></div>
-            <div class="card reveal"><div class="card-img-box"><img src="image6.jpg" alt="Home"></div><div class="card-content"><h3>Home Essentials</h3></div></div>
+            <div class="card reveal"><div class="card-img-box"><img src="image1.jpg" alt="Jewellery"></div><h3>1 Gram Gold</h3></div>
+            <div class="card reveal"><div class="card-img-box"><img src="image2.jpg" alt="Cosmetics"></div><h3>Ladies Cosmetics</h3></div>
+            <div class="card reveal"><div class="card-img-box"><img src="image3.jpg" alt="Clothing"></div><h3>Designer Clothing</h3></div>
+            <div class="card reveal"><div class="card-img-box"><img src="image4.jpg" alt="Materials"></div><h3>Dress Materials</h3></div>
+            <div class="card reveal"><div class="card-img-box"><img src="image5.jpg" alt="Earrings"></div><h3>Earrings & Accessories</h3></div>
+            <div class="card reveal"><div class="card-img-box"><img src="image6.jpg" alt="Home"></div><h3>Home Essentials</h3></div>
         </div>
     </section>
 
     <section id="contact">
-        <div class="section-title reveal"><h2>Find Us</h2></div>
+        <div class="section-title reveal"><h2>Locate Our Store</h2></div>
         <div class="contact-container">
-            <!-- Clickable Address Card -->
-            <a href="https://maps.app.goo.gl/poLuPLUdTVmcK2i36" target="_blank" class="contact-card reveal">
-                <h4>BOUTIQUE LOCATION</h4>
-                <p>KUBRA 1 Gram Gold & Ladies Corner<br>CB Road, Banda Masjid,<br>Near Government Hospital, Tadipatri</p>
+            <!-- Contact Card with NEW MAP LINK -->
+            <div class="contact-card reveal">
+                <h4>OUR ADDRESS</h4>
+                <p>
+                    <strong>KUBRA 1 Gram Gold & Ladies Corner</strong><br>
+                    CB Road, Banda Masjid,<br>
+                    Near Government Hospital, Tadipatri,<br>
+                    Andhra Pradesh - 515411
+                </p>
                 
-                <h4>GET IN TOUCH</h4>
-                <p>Phone: 7416207980</p>
+                <h4>GET DIRECTIONS</h4>
+                <a href="https://maps.app.goo.gl/poLuPLUdTVmcK2i36" target="_blank" class="btn-gold">Open in Google Maps</a>
+                <a href="https://wa.me/917416207980" target="_blank" class="btn-gold" style="background: #25D366; color: #fff !important;">WhatsApp Us</a>
                 
-                <span style="color: var(--royal-gold); font-weight: bold; text-decoration: underline;">Click to Open in Google Maps →</span>
-                <br>
-                <div class="wa-btn-inline">Chat on WhatsApp</div>
-            </a>
+                <h4 style="margin-top: 20px;">CONTACT INFO</h4>
+                <p>Phone: +91 7416207980<br>Email: khatijansurfaraz@gmail.com</p>
+            </div>
 
-            <!-- Updated Map Iframe -->
+            <!-- Embedded Interactive Map -->
             <div class="map-wrapper reveal">
                 <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.06733221976!2d78.0076249!3d14.9056247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb4770005574549%3A0xe5f8664f33166b26!2sKUBRA%201%20GRAM%20GOLD%20%26%20LADIES%20CORNER!5e0!3m2!1sen!2sin!4v1715856000000!5m2!1sen!2sin" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.06733221976!2d78.0076249!3d14.9056247!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb47700055744f1%3A0x63359d9f1092e078!2sKUBRA%201%20GRAM%20GOLD%20%26%20LADIES%20CORNER!5e0!3m2!1sen!2sin!4v1715857000000!5m2!1sen!2sin" 
                     width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
                 </iframe>
             </div>
@@ -231,10 +226,16 @@
 
     <footer>
         <h2 class="logo">KUBRA</h2>
-        <p style="margin-top: 15px; font-size: 0.8rem; opacity: 0.7;">© 2025 KUBRA Boutique. All Rights Reserved.</p>
+        <div class="footer-address">
+            CB Road, Banda Masjid, Near Govt Hospital, Tadipatri<br>
+            <a href="https://maps.app.goo.gl/poLuPLUdTVmcK2i36" target="_blank" class="footer-map-link">View Exact Location on Google Maps ↗</a>
+        </div>
+        <p style="margin-top: 30px; font-size: 0.7rem; opacity: 0.6; text-transform: uppercase; letter-spacing: 2px;">
+            © 2025 KUBRA Boutique. All Rights Reserved.
+        </p>
     </footer>
 
-    <!-- Pulse WhatsApp Button -->
+    <!-- WhatsApp Pulse Button -->
     <a href="https://wa.me/917416207980" class="wa-float" target="_blank">
         <svg viewBox="0 0 448 512"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-5.5-2.8-23.2-8.5-44.2-27.1-16.4-14.6-27.4-32.7-30.6-38.2-3.2-5.6-.3-8.6 2.5-11.3 2.5-2.5 5.6-6.5 8.3-9.7 2.8-3.3 3.7-5.5 5.5-9.2 1.9-3.7 1-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 13.2 5.7 23.5 9.2 31.6 11.8 13.3 4.2 25.4 3.6 35 2.2 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
     </a>
