@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KUBRA | Royal Elegance Boutique</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --royal-gold: #D4AF37;
+            --bright-gold: #F9E27E;
+            --deep-burgundy: #4A0404;
+            --obsidian: #1A1A1A;
+            --cream: #FDF5E6;
+            --gold-gradient: linear-gradient(135deg, #B8860B 0%, #D4AF37 50%, #F9E27E 100%);
+            --dark-gradient: linear-gradient(180deg, #1A1A1A 0%, #4A0404 100%);
+            --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            color: var(--obsidian);
+            background-color: var(--cream);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .logo { font-family: 'Playfair Display', serif; }
+
+        /* --- Scroll Animations --- */
+        .reveal { opacity: 0; transform: translateY(40px); transition: var(--transition); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* --- Custom Scrollbar --- */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: var(--obsidian); }
+        ::-webkit-scrollbar-thumb { background: var(--royal-gold); border-radius: 5px; }
+
+        /* --- Navbar --- */
+        nav {
+            position: sticky; top: 0; 
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1.2rem 8%; 
+            border-bottom: 2px solid var(--royal-gold);
+            z-index: 1000;
+        }
+        .logo { 
+            font-size: 2.2rem; font-weight: 700; 
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none; letter-spacing: 4px;
+        }
+        .nav-links { display: flex; list-style: none; gap: 2.5rem; }
+        .nav-links a { 
+            text-decoration: none; color: var(--bright-gold); 
+            font-weight: 400; font-size: 0.85rem; text-transform: uppercase; 
+            letter-spacing: 2px; transition: var(--transition); 
+        }
+        .nav-links a:hover { color: #fff; text-shadow: 0 0 10px var(--royal-gold); }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; color: var(--white); position: relative;
+            background: var(--dark-gradient); padding: 0 10%;
+            border-bottom: 5px double var(--royal-gold);
+        }
+        
+        /* Shimmering Gold Dust Effect */
+        .hero::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.4; pointer-events: none;
+        }
+
+        .hero h1 { 
+            font-size: clamp(3rem, 10vw, 6rem); color: var(--royal-gold); 
+            margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 8px;
+            background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+        }
+        .hero p { 
+            font-size: 1.2rem; color: var(--cream); margin-bottom: 3rem; 
+            letter-spacing: 3px; text-transform: uppercase; font-weight: 300;
+        }
+        .cta-btn { 
+            padding: 1.2rem 3rem; background: var(--gold-gradient); 
+            color: var(--deep-burgundy); text-decoration: none; font-weight: 900; 
+            border-radius: 0; text-transform: uppercase; letter-spacing: 2px;
+            transition: var(--transition); border: 2px solid transparent;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+        .cta-btn:hover { 
+            background: transparent; color: var(--royal-gold); 
+            border: 2px solid var(--royal-gold); transform: scale(1.05);
+        }
+
+        /* --- Marquee --- */
+        .marquee { 
+            background: var(--royal-gold); color: var(--deep-burgundy); 
+            padding: 12px 0; overflow: hidden; white-space: nowrap; 
+            font-weight: 700; border-bottom: 2px solid var(--obsidian);
+        }
+        .marquee-content { display: inline-block; animation: scroll 40s linear infinite; }
+        @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .separator { margin: 0 30px; font-size: 1.5rem; }
+
+        /* --- Section Styling --- */
+        section { padding: 120px 8%; position: relative; }
+        section:nth-of-type(even) { background-color: #fffaf0; }
+
+        .section-title { text-align: center; margin-bottom: 80px; }
+        .section-title h2 { 
+            font-size: 3rem; color: var(--deep-burgundy); margin-bottom: 15px; 
+            text-transform: uppercase; letter-spacing: 5px;
+        }
+        .section-title .divider { 
+            display: flex; align-items: center; justify-content: center; gap: 15px;
+            color: var(--royal-gold); font-size: 1.5rem;
+        }
+        .section-title .line { width: 100px; height: 2px; background: var(--gold-gradient); }
+
+        /* --- Collections Gallery Grid --- */
+        .collections-grid { 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; 
+        }
+        
+        .card { 
+            background: #fff; position: relative; 
+            padding: 10px; border: 1px solid #ddd;
+            transition: var(--transition);
+        }
+        .card:hover { 
+            transform: translateY(-15px);
+            border-color: var(--royal-gold);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        /* Gold Frame Effect */
+        .card::after {
+            content: ''; position: absolute; top: -5px; left: -5px; right: -5px; bottom: -5px;
+            border: 1px solid var(--royal-gold); pointer-events: none; opacity: 0; transition: var(--transition);
+        }
+        .card:hover::after { opacity: 1; transform: scale(1.02); }
+
+        .card-img-box { 
+            width: 100%; height: 350px; background: var(--obsidian); 
+            overflow: hidden; position: relative; border-bottom: 3px solid var(--royal-gold);
+        }
+        .card-img-box img { 
+            width: 100%; height: 100%; object-fit: cover; 
+            transition: transform 1s ease; filter: sepia(20%);
+        }
+        .card:hover .card-img-box img { transform: scale(1.15); filter: sepia(0%); }
+        
+        .card-content { padding: 30px 15px; text-align: center; }
+        .card h3 { 
+            color: var(--deep-burgundy); margin-bottom: 15px; 
+            font-size: 1.5rem; letter-spacing: 1px;
+        }
+        .card p { font-size: 0.95rem; color: #555; font-weight: 300; }
+
+        /* --- Why Choose Us --- */
+        .feature-container { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; }
+        .feature-box { 
+            flex: 1; min-width: 300px; padding: 50px; background: var(--obsidian);
+            color: var(--bright-gold); border: 2px solid var(--royal-gold); text-align: center;
+        }
+        .feature-box h3 { font-size: 1.8rem; margin: 20px 0; color: #fff; }
+
+        /* --- Contact --- */
+        .contact-container { display: grid; grid-template-columns: 1fr 1.2fr; gap: 50px; }
+        .contact-card { 
+            background: var(--obsidian); color: var(--cream); padding: 50px; 
+            border-left: 5px solid var(--royal-gold); 
+        }
+        .contact-card h4 { color: var(--royal-gold); margin-bottom: 10px; font-size: 0.9rem; letter-spacing: 2px; }
+        .contact-card p, .contact-card a { font-size: 1.2rem; color: #fff; text-decoration: none; margin-bottom: 30px; display: block; }
+        
+        .wa-link { 
+            display: inline-block; background: var(--gold-gradient); color: var(--deep-burgundy) !important;
+            padding: 12px 30px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+        }
+
+        .map-wrapper { height: 450px; border: 10px solid #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
+        /* --- Footer --- */
+        footer { 
+            background: var(--obsidian); color: var(--royal-gold); 
+            text-align: center; padding: 80px 5%; border-top: 5px solid var(--royal-gold);
+        }
+
+        /* --- Floating WhatsApp --- */
+        .wa-float {
+            position: fixed; bottom: 30px; right: 30px;
+            background: #25D366; color: white; width: 65px; height: 65px;
+            border-radius: 50%; display: flex; justify-content: center; align-items: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3); z-index: 9999; transition: var(--transition);
+        }
+        .wa-float:hover { transform: scale(1.1) rotate(10deg); }
+
+        @media (max-width: 992px) {
+            .contact-container { grid-template-columns: 1fr; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">KUBRA</a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <h1 class="reveal">KUBRA</h1>
+        <p class="reveal">Royal Elegance For The Modern Woman</p>
+        <a href="#collections" class="cta-btn reveal">Enter The Gallery</a>
+    </section>
+
+    <div class="marquee">
+        <div class="marquee-content">
+            1 GRAM GOLD JEWELLERY <span class="separator">❦</span> 
+            LADIES COSMETICS <span class="separator">❦</span> 
+            LADIES CLOTHING <span class="separator">❦</span> 
+            DRESS MATERIALS <span class="separator">❦</span> 
+            EXCLUSIVE GIFTS <span class="separator">❦</span> 
+            HOME ESSENTIALS <span class="separator">❦</span> 
+            EARRINGS & LININGS
+            <span class="separator">❦</span> 
+            1 GRAM GOLD JEWELLERY <span class="separator">❦</span> 
+            LADIES COSMETICS <span class="separator">❦</span> 
+            LADIES CLOTHING
+        </div>
+    </div>
+
+    <section id="collections">
+        <div class="section-title reveal">
+            <h2>Our Collections</h2>
+            <div class="divider"><span class="line"></span> ❦ <span class="line"></span></div>
+        </div>
+        
+        <div class="collections-grid">
+            <!-- 1 Gram Gold - User Photo 1 -->
+            <div class="card reveal">
+                <div class="card-img-box">
+                    <img src="image1.jpg" alt="Gold Jewellery">
+                </div>
+                <div class="card-content">
+                    <h3>1 Gram Gold Jewellery</h3>
+                    <p>Royal heritage designs crafted to perfection. Shines like pure gold, priced for your lifestyle.</p>
+                </div>
+            </div>
+
+            <!-- Cosmetics - User Photo 2 -->
+            <div class="card reveal">
+                <div class="card-img-box">
+                    <img src="image2.jpg" alt="Cosmetics">
+                </div>
+                <div class="card-content">
+                    <h3>Premium Cosmetics</h3>
+                    <p>International and local beauty brands curated to enhance your natural royalty.</p>
+                </div>
+            </div>
+
+            <!-- Clothing - User Photo 3 -->
+            <div class="card reveal">
+                <div class="card-img-box">
+                    <img src="image3.jpg" alt="Clothing">
+                </div>
+                <div class="card-content">
+                    <h3>Ladies Clothing</h3>
+                    <p>From traditional sarees to modern kurtis, find the perfect attire for every royal occasion.</p>
+                </div>
+            </div>
+
+            <!-- Materials - User Photo 4 -->
+            <div class="card reveal">
+                <div class="card-img-box">
+                    <img src="image4.jpg" alt="Dress Materials">
+                </div>
+                <div class="card-content">
+                    <h3>Dress Materials</h3>
+                    <p>Luxury unstitched fabrics. Design your own signature style with our rich textures.</p>
+                </div>
+            </div>
+
+            <!-- Earrings - User Photo 5 -->
+            <div class="card reveal">
+                <div class="card-img-box">
+                    <img src="image5.jpg" alt="Earrings">
+                </div>
+                <div class="card-content">
+                    <h3>Earrings & Accessories</h3>
+                    <p>The finishing touch for every outfit. Intricate designs from traditional to contemporary.</p>
+                </div>
+            </div>
+
+            <!-- Home/Plastic - User Photo 6 -->
+            <div class="card reveal">
+                <div class="card-img-box">
+                    <img src="image6.jpg" alt="Home Essentials">
+                </div>
+                <div class="card-content">
+                    <h3>Home & Plastic Items</h3>
+                    <p>Organize your palace with our premium quality home essentials and durable plastic-ware.</p>
+                </div>
+            </div>
+            
+            <!-- Gifts - User Photo 7 -->
+            <div class="card reveal">
+                <div class="card-img-box">
+                    <img src="image7.jpg" alt="Gifts">
+                </div>
+                <div class="card-content">
+                    <h3>Exclusive Gifts</h3>
+                    <p>Handpicked treasures perfect for showing love to the special people in your life.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="section-title reveal">
+            <h2>Our Royal Legacy</h2>
+            <div class="divider"><span class="line"></span> ❦ <span class="line"></span></div>
+        </div>
+        <div style="max-width: 900px; margin: 0 auto; text-align: center;" class="reveal">
+            <p style="font-size: 1.3rem; font-style: italic; color: var(--deep-burgundy);">
+                "At KUBRA, we believe every woman is a queen in her own right."
+            </p>
+            <p style="margin-top: 30px;">
+                Located in the heart of Tadipatri, KUBRA has become a landmark for women seeking high-quality fashion, exquisite jewellery, and home necessities. Our curated selection combines the richness of Indian tradition with modern convenience. When you step into KUBRA, you step into a world of affordable luxury.
+            </p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-title reveal">
+            <h2>Visit The Boutique</h2>
+            <div class="divider"><span class="line"></span> ❦ <span class="line"></span></div>
+        </div>
+        <div class="contact-container">
+            <div class="contact-card reveal">
+                <h4>LOCATION</h4>
+                <p>CB Road, Banda Masjid,<br>Near Government Hospital, Tadipatri</p>
+                
+                <h4>CONNECT</h4>
+                <p>Mobile: 7416207980<br>WhatsApp: 7416207980</p>
+                
+                <h4>EMAIL</h4>
+                <p>khatijansurfaraz@gmail.com</p>
+                
+                <a href="https://wa.me/917416207980" class="wa-link">Message Our Royal Desk</a>
+            </div>
+            <div class="map-wrapper reveal">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15448.2!2d78.005!3d14.908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb476219154a4ad%3A0xc3415951804b3701!2sTadipatri%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h2 class="logo">KUBRA</h2>
+        <p style="letter-spacing: 3px; margin: 20px 0;">CRAFTED WITH LOVE FOR EVERY WOMAN</p>
+        <div style="width: 50px; height: 2px; background: var(--royal-gold); margin: 20px auto;"></div>
+        <p style="font-size: 0.8rem; opacity: 0.7;">© 2025 KUBRA. All Rights Reserved.</p>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/917416207980" class="wa-float" target="_blank">
+        <svg width="35" height="35" fill="white" viewBox="0 0 16 16">
+            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93a7.898 7.898 0 0 0-2.322-5.607zM7.994 14.52a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+        </svg>
+    </a>
+
+    <script>
+        // Reveal on scroll
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>
